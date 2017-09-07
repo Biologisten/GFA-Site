@@ -1,31 +1,35 @@
 <?php
 session_start();
-require_once '/../home.php';
 
 if (!isset($_SESSION['userSession'])) {
-	header("Location: index.php");
+	header("Location: ../index.php");
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>#1 Meme factory</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="../css/global.css">
 </head>
 <body>
 <ul class="main-container">
 <?php 
 
-$pictures = glob("pictures/*.*");
-$videos = glob("videos/*.webm");
+$pictures = glob("../pictures/*.*");
+$videos = glob("../videos/*.*");
 
-for ($i=$var1; $var1<count($videos) && $i <= 9; $i++) { $num = $videos[$var1]; 
-$var1++;
+$vidnum = 10;
+$picnum = 10;
+
+for ($i=0; $i<count($videos) && $i <= 9; $i++) { $num = $videos[$vidnum]; 
+$vidnum++;
 echo '<video class="post" controls="true" loop="true">
 <source src='.$num.' type=video/webm >
 </video>'; }
 
-for ($i=$var1; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$var1];
-$var1++;
+for ($i=0; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$picnum];
+$picnum++;
 echo '<img class="post" src='.$num.' height="700" width="700">'; }
 
 ?>

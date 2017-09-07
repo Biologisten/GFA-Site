@@ -46,18 +46,19 @@ $DBcon->close();
 <?php 
 
 $pictures = glob("pictures/*.*");
-$videos = glob("videos/*.webm");
+$videos = glob("videos/*.*");
 
-$var1 = 0;
+$vidnum = 0;
+$picnum = 0;
 
-for ($i=0; $var1<count($videos) && $i <= 9; $i++) { $num = $videos[$var1]; 
-$var1++;
+for ($i=0; $i<count($videos) && $i <= 9; $i++) { $num = $videos[$vidnum]; 
+$vidnum++;
 echo '<video class="post" controls="true" loop="true">
 <source src='.$num.' type=video/webm >
 </video>'; }
 
-for ($i=0; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$var1];
-$var1++;
+for ($i=0; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$picnum];
+$picnum++;
 echo '<img class="post" src='.$num.' height="700" width="700">'; }
 
 ?>

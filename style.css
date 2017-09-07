@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,400i');
+.navbar .container #navbar {
+	background: ##1b1b1b;
+}
+
+body{
+	background:#464646;
+}
+
+.form-signin {
+    max-width: 500px;
+    padding: 19px 29px 29px;
+    margin: 0 auto;
+	//margin-top:90px;
+    background-color: #32353e;
+	
+    border: 1px solid #675e99;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#8a2222;
+	font-weight:lighter;
+}
+
+.form-signin .form-signin-heading{
+    color:#9862B9;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+.form-signin input[type="email"] {
+    font-size: 16px;
+    height: auto;
+    padding: 7px 9px;
+}
+
+.signin-form
+{
+	//border:solid red 1px;
+	margin-top:80px;
+}
+.navbar-brand{
+	font-family:"Lucida Handwriting";
+}
+#btn-submit{
+	height:45px;
+}
+/*#navbar-middle {
+	text-align: center;
+	margin:7.5px -15px;
+}
+#navbar-middle li {
+	display:inline;
+}
+#navbar-middle a {
+	text-decoration:none; 
+	padding:0 30px;
+}*/
+#Welcome{
+    display:block;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    width: 90%;
+}
+#copyright{
+	background: url("key-pics/logo.svg");
+	background-size: 300px 50px;
+	background-repeat: no-repeat;
+}

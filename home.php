@@ -15,17 +15,14 @@ $DBcon->close();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>#1 Meme factory</title>
-  <link rel="icon" sizes="32x32" href="key-pics/favicon-32x32.png">
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
-  <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
-  <link rel="stylesheet" href="style.css" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="css/global.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-  			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			crossorigin="anonymous">		 	
-	</script>
-  <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+	<title>#1 Meme factory</title>
+	<link rel="icon" sizes="32x32" href="key-pics/favicon-32x32.png">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -42,36 +39,38 @@ $DBcon->close();
         </div>
       </div>
   </nav>
-<ul class="main-container" data-infinite-scroll='{ "path": "pages/page1", "append": ".post", "history": false }'>>
+<ul class="main-container">
 <?php 
 
-$pictures = glob("pictures/*.*");
-$videos = glob("videos/*.*");
+require_once ('scripts/php/count.php');
 
-$vidnum = 0;
-$picnum = 0;
-
-for ($i=0; $i<count($videos) && $i <= 9; $i++) { $num = $videos[$vidnum]; 
+for ($i=0; $vidnum<count($videos) && $i <= 9; $i++) { $num = $videos[$vidnum]; 
 $vidnum++;
 echo '<video class="post" controls="true" loop="true">
-<source src='.$num.' type=video/webm >
+<source src='.$num.' type="video/webm">
 </video>'; }
 
-for ($i=0; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$picnum];
+for ($i=0; $picnum<count($pictures) && $i <= 9; $i++) {$num = $pictures[$picnum];
 $picnum++;
 echo '<img class="post" src='.$num.' height="700" width="700">'; }
 
-?>
 
-<script type="text/javascript">
-	$('.container').infiniteScroll({
-	// options
-	path: '.pagination__next',
-	append: '.post',
-	history: false,
-});
+
+function load() {
+	header("Location: pages/page1.php");
+}
+
+?>
+<script>
+$('#button').click(function() {
+	load();
+});    
 </script>
 
+<form>
+	<button id="button">Hello</button>
+	<a href="home.php?load_moar=true">Load More!</a>
+</form>
 </ul>
 </body>
 </html>

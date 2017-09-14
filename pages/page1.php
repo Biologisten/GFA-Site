@@ -24,13 +24,13 @@ $picnum = 10;
 
 for ($i=0; $i<count($videos) && $i <= 9; $i++) { $num = $videos[$vidnum]; 
 $vidnum++;
-echo '<video class="post" controls="true" loop="true">
+echo '<video id="post" controls="true" loop="true">
 <source src='.$num.' type=video/webm >
 </video>'; }
 
 for ($i=0; $i<count($pictures) && $i <= 9; $i++) {$num = $pictures[$picnum];
 $picnum++;
-echo '<img class="post" src='.$num.' height="700" width="700">'; }
+echo '<img id="post" src='.$num.' height="700" width="700">'; }
 
 ?>
 </ul>

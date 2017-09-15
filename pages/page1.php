@@ -33,6 +33,6 @@ $picnum++;
 echo '<img id="post" src='.$num.' height="700" width="700">'; }
 
 ?>
-</ul>
-</body>
+</ul
+></body>
 </html>
